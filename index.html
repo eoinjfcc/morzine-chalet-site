@@ -145,8 +145,8 @@
   .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.9rem;font-weight:500;color:var(--slate)}
 
   /* Gallery */
-  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;box-shadow:var(--shadow);display:block}
+  .gallery{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+  .gallery img{height:230px;width:auto;object-fit:cover;border-radius:10px;box-shadow:var(--shadow);display:block;background:var(--stone-2)}
 
   /* Quote / contact */
   .form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}
@@ -192,7 +192,7 @@
     .exp{grid-template-columns:1fr}
     .wine-grid{grid-template-columns:1fr}
     .form-wrap{grid-template-columns:1fr}
-    .gallery{grid-template-columns:repeat(3,1fr)}
+    .gallery img{height:190px}
     footer .cols{grid-template-columns:1fr}
     nav.main ul{display:none}
     .menu-toggle{display:block}
@@ -201,7 +201,7 @@
     /* fixed background is janky on mobile — switch to scroll */
     .pin,.wine{background-attachment:scroll}
   }
-  @media(max-width:560px){ .gallery{grid-template-columns:repeat(2,1fr)} .field.row{grid-template-columns:1fr} }
+  @media(max-width:560px){ .gallery img{height:150px} .field.row{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -449,42 +449,61 @@
 <section id="gallery">
   <div class="wrap">
     <div class="gallery">
-      <img src="assets/img/IMG_2659.jpg" alt="Alpine sunset over the mountains" loading="lazy" />
-      <img src="assets/img/IMG_0179.jpg" alt="Made-up chalet bedroom" loading="lazy" />
-      <img src="assets/img/IMG_3306.jpg" alt="Vaulted chalet living room" loading="lazy" />
-      <img src="assets/img/Geneva_back_yard_with_ballons_.jpg" alt="Summer garden and pool" loading="lazy" />
-      <img src="assets/img/IMG_4947.jpg" alt="Twin bedroom with wood panelling" loading="lazy" />
-      <img src="assets/img/IMG_3250.jpg" alt="Snow-laden chalet in winter" loading="lazy" />
-      <img src="assets/img/IMG_4954.jpg" alt="Modern chalet bathroom" loading="lazy" />
-      <img src="assets/img/hedges_and_lawn.jpg" alt="Manicured chalet garden" loading="lazy" />
-      <img src="assets/img/IMG_6712.jpg" alt="Warm timber interior" loading="lazy" />
-      <img src="assets/img/IMG_3685.jpg" alt="Festive chalet interior" loading="lazy" />
-      <img src="assets/img/IMG_2066.jpg" alt="Illuminated chalet at night" loading="lazy" />
-      <img src="assets/img/IMG_5742.jpg" alt="Sea of clouds over the Alps" loading="lazy" />
-      <img src="assets/img/IMG_3889.jpg" alt="Snow-covered pines and chalet" loading="lazy" />
-      <img src="assets/img/IMG_6719.jpg" alt="Warm timber sauna interior" loading="lazy" />
-      <img src="assets/img/IMG_7991.jpg" alt="Golden timber sun deck" loading="lazy" />
-      <img src="assets/img/IMG_2059.jpg" alt="Alpine village lights at night" loading="lazy" />
-      <img src="assets/img/shmitt_house.jpg" alt="Timber chalet and deck" loading="lazy" />
-      <img src="assets/img/IMG_9228.jpg" alt="Bespoke chalet joinery" loading="lazy" />
-      <img src="assets/img/IMG_4957.jpg" alt="Twin bedroom made up for guests" loading="lazy" />
-      <img src="assets/img/IMG_0897.jpg" alt="Timber ensuite with walk-in shower" loading="lazy" />
-      <img src="assets/img/IMG_8622.jpg" alt="Hot tub with a valley view" loading="lazy" />
-      <img src="assets/img/IMG_6447.jpg" alt="Snowmobile in deep snow at night" loading="lazy" />
-      <img src="assets/img/IMG_1981.jpg" alt="Traditional Savoyard chalet entrance with log store" loading="lazy" />
-      <img src="assets/img/IMG_4633.jpg" alt="Private-chef dish: fillet with morel cream sauce" loading="lazy" />
-      <img src="assets/img/IMG_9577.jpg" alt="A family day out on the slopes" loading="lazy" />
-      <img src="assets/img/IMG_4204.jpg" alt="Mountain view from a chalet window" loading="lazy" />
-      <img src="assets/img/IMG_5757.jpg" alt="Alpine charcuterie and cheese board" loading="lazy" />
-      <img src="assets/img/IMG_6784.jpg" alt="Snow-covered pine forest" loading="lazy" />
-      <img src="assets/img/IMG_5509.jpg" alt="A little one's first snowboard by the mountain restaurant" loading="lazy" />
-      <img src="assets/img/IMG_0817.jpg" alt="Chalet wine selection" loading="lazy" />
-      <img src="assets/img/IMG_4787.jpg" alt="Timber bunk room, perfect for families" loading="lazy" />
-      <img src="assets/img/IMG_6332.jpg" alt="Balcony view over the snowy valley" loading="lazy" />
-      <img src="assets/img/IMG_5673.jpg" alt="Ski tourers on the ridge" loading="lazy" />
-      <img src="assets/img/IMG_1301.jpg" alt="Private-chef plated dish" loading="lazy" />
-      <img src="assets/img/IMG_6250.jpg" alt="The family dog on a snowy trail" loading="lazy" />
-      <img src="assets/img/049098A4-4B63-4B0E-9181-52A974ACDBF0.jpg" alt="Summer mountain biking by the chalet" loading="lazy" />
+      <img src="assets/img/IMG_2659.jpg" alt="Alpine sunset over the mountains" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_0179.jpg" alt="Made-up chalet bedroom" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_3306.jpg" alt="Vaulted chalet living room" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/Geneva_back_yard_with_ballons_.jpg" alt="Summer garden and pool" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_4947.jpg" alt="Twin bedroom with wood panelling" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_3250.jpg" alt="Snow-laden chalet in winter" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_4954.jpg" alt="Modern chalet bathroom" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/hedges_and_lawn.jpg" alt="Manicured chalet garden" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_6712.jpg" alt="Warm timber interior" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_3685.jpg" alt="Festive chalet interior" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_2066.jpg" alt="Illuminated chalet at night" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_5742.jpg" alt="Sea of clouds over the Alps" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_3889.jpg" alt="Snow-covered pines and chalet" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_6719.jpg" alt="Warm timber sauna interior" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_7991.jpg" alt="Golden timber sun deck" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_2059.jpg" alt="Alpine village lights at night" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/shmitt_house.jpg" alt="Timber chalet and deck" data-ar="3.846" loading="lazy" />
+      <img src="assets/img/IMG_9228.jpg" alt="Bespoke chalet joinery" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_4957.jpg" alt="Twin bedroom made up for guests" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_0897.jpg" alt="Timber ensuite with walk-in shower" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_8622.jpg" alt="Hot tub with a valley view" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_6447.jpg" alt="Snowmobile in deep snow at night" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_1981.jpg" alt="Traditional Savoyard chalet entrance with log store" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_4633.jpg" alt="Private-chef dish: fillet with morel cream sauce" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_9577.jpg" alt="A family day out on the slopes" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_4204.jpg" alt="Mountain view from a chalet window" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_5757.jpg" alt="Alpine charcuterie and cheese board" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_6784.jpg" alt="Snow-covered pine forest" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_5509.jpg" alt="A little one's first snowboard by the mountain restaurant" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_0817.jpg" alt="Chalet wine selection" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_4787.jpg" alt="Timber bunk room, perfect for families" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_6332.jpg" alt="Balcony view over the snowy valley" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_5673.jpg" alt="Ski tourers on the ridge" data-ar="2.165" loading="lazy" />
+      <img src="assets/img/IMG_1301.jpg" alt="Private-chef plated dish" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_6250.jpg" alt="The family dog on a snowy trail" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/049098A4-4B63-4B0E-9181-52A974ACDBF0.jpg" alt="Summer mountain biking by the chalet" data-ar="1.0" loading="lazy" />
+      <img src="assets/img/20200519_212820.jpg" alt="Modern chalet with terrace at dusk" data-ar="2.057" loading="lazy" />
+      <img src="assets/img/20200130_140343.jpg" alt="Chalet in fresh snow" data-ar="2.057" loading="lazy" />
+      <img src="assets/img/IMG_6799.jpg" alt="Rustic timber chalet in winter" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_4555.jpg" alt="Snowy resort village view" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/69F64BBD-4B6B-49A6-A159-330B2B6763A0.jpg" alt="Tiled walk-in wet room" data-ar="0.8" loading="lazy" />
+      <img src="assets/img/9A7576A0-9F0C-4649-AA11-7713358FC972.jpg" alt="Warm timber sauna" data-ar="0.802" loading="lazy" />
+      <img src="assets/img/20190805_083157.jpg" alt="Breakfast on the terrace" data-ar="1.778" loading="lazy" />
+      <img src="assets/img/20181225_140003.jpg" alt="Dessert, beautifully plated" data-ar="1.778" loading="lazy" />
+      <img src="assets/img/IMG_6923.jpg" alt="A private-chef main course" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/20191130_085056.jpg" alt="Sharing a mountain lunch together" data-ar="1.778" loading="lazy" />
+      <img src="assets/img/IMG_1329.jpg" alt="A hand-picked wine selection" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_1283.jpg" alt="Alpine waterfall in the woods" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/IMG_1289.jpg" alt="A mountain stream through the forest" data-ar="0.75" loading="lazy" />
+      <img src="assets/img/20200526_172847.jpg" alt="Green alpine meadow in summer" data-ar="2.057" loading="lazy" />
+      <img src="assets/img/IMG_3838.jpg" alt="Fresh powder turns" data-ar="0.462" loading="lazy" />
+      <img src="assets/img/IMG_7218.jpg" alt="The kids out on their skis" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_2442.jpg" alt="The cellar, stocked and ready" data-ar="4.52" loading="lazy" />
+      <img src="assets/img/IMG_4510.jpg" alt="Avoriaz in the winter sun" data-ar="1.333" loading="lazy" />
+      <img src="assets/img/IMG_5585.jpg" alt="Baby's first snowboard" data-ar="0.75" loading="lazy" />
     </div>
   </div>
 </section>
@@ -617,6 +636,35 @@
   document.querySelectorAll('#navmenu a').forEach(function(a){
     a.addEventListener('click',function(){document.getElementById('navmenu').classList.remove('open');});
   });
+
+  // Justified mosaic gallery: photos keep their shape, every row fills the width, bottom finishes flush
+  function justifyGallery(){
+    var g=document.querySelector('.gallery'); if(!g) return;
+    var imgs=[].slice.call(g.querySelectorAll('img')); if(!imgs.length) return;
+    var cw=g.clientWidth, gap=10, vw=window.innerWidth;
+    var target = vw<=560 ? 150 : vw<=960 ? 190 : 230;
+    var row=[], sum=0;
+    function place(isLast){
+      if(!row.length) return;
+      var gaps=(row.length-1)*gap;
+      var h=(cw-gaps)/sum;
+      if(isLast && h>target*1.7) h=target;  // avoid blowing up a sparse final row
+      row.forEach(function(o){
+        o.el.style.width=Math.floor(o.ar*h)+'px';
+        o.el.style.height=Math.floor(h)+'px';
+      });
+      row=[]; sum=0;
+    }
+    imgs.forEach(function(el){
+      var ar=parseFloat(el.getAttribute('data-ar'))||1.4;
+      row.push({el:el, ar:ar}); sum+=ar;
+      if(sum*target + (row.length-1)*gap >= cw) place(false);
+    });
+    place(true);
+  }
+  var _gt; window.addEventListener('resize', function(){ clearTimeout(_gt); _gt=setTimeout(justifyGallery,120); });
+  window.addEventListener('load', justifyGallery);
+  justifyGallery();
 </script>
 </body>
 </html>
