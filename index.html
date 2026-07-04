@@ -145,8 +145,8 @@
   .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.9rem;font-weight:500;color:var(--slate)}
 
   /* Gallery */
-  .gallery{columns:4;column-gap:12px}
-  .gallery img{width:100%;border-radius:10px;margin-bottom:12px;break-inside:avoid;box-shadow:var(--shadow)}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;box-shadow:var(--shadow);display:block}
 
   /* Quote / contact */
   .form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}
@@ -192,7 +192,7 @@
     .exp{grid-template-columns:1fr}
     .wine-grid{grid-template-columns:1fr}
     .form-wrap{grid-template-columns:1fr}
-    .gallery{columns:2}
+    .gallery{grid-template-columns:repeat(3,1fr)}
     footer .cols{grid-template-columns:1fr}
     nav.main ul{display:none}
     .menu-toggle{display:block}
@@ -201,7 +201,7 @@
     /* fixed background is janky on mobile — switch to scroll */
     .pin,.wine{background-attachment:scroll}
   }
-  @media(max-width:560px){ .gallery{columns:1} .field.row{grid-template-columns:1fr} }
+  @media(max-width:560px){ .gallery{grid-template-columns:repeat(2,1fr)} .field.row{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -471,9 +471,8 @@
       <img src="assets/img/IMG_0897.jpg" alt="Timber ensuite with walk-in shower" loading="lazy" />
       <img src="assets/img/IMG_8622.jpg" alt="Hot tub with a valley view" loading="lazy" />
       <img src="assets/img/IMG_6447.jpg" alt="Snowmobile in deep snow at night" loading="lazy" />
-      <img src="assets/img/IMG_5247b.jpg" alt="Timber chalet cabin build in the snow" loading="lazy" />
-      <img src="assets/img/IMG_9837.jpg" alt="Bespoke green joinery being fitted" loading="lazy" />
       <img src="assets/img/IMG_1981.jpg" alt="Traditional Savoyard chalet entrance with log store" loading="lazy" />
+      <img src="assets/img/IMG_4633.jpg" alt="Private-chef dish: fillet with morel cream sauce" loading="lazy" />
     </div>
   </div>
 </section>
