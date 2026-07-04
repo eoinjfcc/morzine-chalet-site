@@ -1,0 +1,13 @@
+# JEFFBUILD — Netlify configuration
+# Static single-page site: no build step required.
+
+[build]
+  publish = "."
+
+# Nice-to-have security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

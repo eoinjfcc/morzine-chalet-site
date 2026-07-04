@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chalet Services &amp; Concierge — Morzine &amp; the Portes du Soleil</title>
+<meta name="description" content="A family-run chalet services and concierge business offering concierge, changeover, chalet maintenance, renovation management, wine supply, private chefs and guided ski touring across Morzine, Les Gets and the Portes du Soleil." />
+<meta property="og:title" content="Chalet Services & Concierge — Morzine & the Portes du Soleil" />
+<meta property="og:description" content="Family-run chalet concierge, changeover, maintenance and renovation management in the Portes du Soleil." />
+<meta property="og:type" content="website" />
+
+<!-- ================================================================ -->
+<!--  EDIT CONTACT / BUSINESS DETAILS: search "CONFIG"                 -->
+<!-- ================================================================ -->
+
+<style>
+  :root{
+    --slate:#1e2a31;--slate-2:#2b3a43;--stone:#f6f3ee;--stone-2:#ece7dd;--line:#ddd6c9;
+    --accent:#b56a34;--accent-dark:#96541f;--pine:#2f5d50;--text:#232e35;--muted:#5c6771;
+    --white:#fff;--radius:14px;--shadow:0 12px 34px rgba(30,42,49,.10);--maxw:1140px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);background:var(--stone);line-height:1.62;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.16;letter-spacing:-.01em;color:var(--slate)}
+  a{color:var(--accent-dark);text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 28px;border-radius:999px;
+    font-weight:600;border:none;cursor:pointer;transition:background .2s,transform .1s;font-size:1rem}
+  .btn:hover{background:var(--accent-dark)}
+  .btn:active{transform:translateY(1px)}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.65)}
+  .btn.ghost:hover{background:rgba(255,255,255,.14)}
+
+  /* Header — clean, fixed height, no overlap */
+  header{position:sticky;top:0;z-index:100;background:rgba(246,243,238,.94);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px;padding:8px 0}
+  .brand{display:flex;align-items:center;gap:11px;line-height:1.05}
+  .brand .mark{width:40px;height:40px;border-radius:9px;background:var(--slate);display:grid;place-items:center;
+    color:#fff;font-family:Georgia,serif;font-weight:700;font-size:1rem;flex-shrink:0}
+  .brand .bt{font-family:Georgia,serif;font-weight:700;font-size:1.12rem;color:var(--slate);letter-spacing:.01em}
+  .brand .bt small{display:block;font-family:-apple-system,sans-serif;font-size:.6rem;font-weight:700;
+    letter-spacing:.19em;color:var(--accent-dark);text-transform:uppercase;margin-top:2px}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  nav.main ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;align-items:center}
+  nav.main a.navlink{color:var(--slate);font-weight:500;font-size:.94rem;white-space:nowrap}
+  nav.main a.navlink:hover{color:var(--accent-dark)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff;flex-shrink:0}
+  .lang button{border:none;background:transparent;padding:6px 12px;cursor:pointer;font-weight:700;font-size:.8rem;color:var(--muted)}
+  .lang button.active{background:var(--slate);color:#fff}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--slate);line-height:1}
+
+  /* Hero */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;
+    background:linear-gradient(180deg,rgba(20,28,33,.55),rgba(20,28,33,.78)),url("assets/img/IMG_2066.jpg");
+    background-size:cover;background-position:center}
+  .hero-inner{max-width:760px;padding:70px 0}
+  .hero .eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:#eec9a9;margin-bottom:18px}
+  .hero h1{color:#fff;font-size:clamp(2.2rem,5.4vw,3.7rem);margin:0 0 20px}
+  .hero p.lead{font-size:1.2rem;color:#eee7dd;max-width:620px;margin:0 0 30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .trust{display:flex;gap:30px;flex-wrap:wrap;margin-top:40px;padding-top:26px;border-top:1px solid rgba(255,255,255,.22)}
+  .trust div{font-size:.9rem;color:#eee7dd}
+  .trust b{display:block;font-family:Georgia,serif;font-size:1.5rem;color:#fff;line-height:1;margin-bottom:3px}
+
+  section{padding:80px 0}
+  .section-head{max-width:700px;margin-bottom:46px}
+  .section-head .kick{font-size:.76rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark)}
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin:.5rem 0 .6rem}
+  .section-head p{color:var(--muted);font-size:1.08rem;margin:0}
+  .alt{background:var(--stone-2)}
+
+  /* Family blurb */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .about-grid img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;height:100%;max-height:520px;object-fit:cover}
+  .about-copy .kick{font-size:.76rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark)}
+  .about-copy h2{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:.4rem 0 1rem}
+  .about-copy p{color:var(--text);margin:0 0 14px;font-size:1.04rem}
+  .sign{font-family:Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--slate);margin-top:6px}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .card .ph{height:210px;background-size:cover;background-position:center}
+  .card .cbody{padding:26px 26px 28px}
+  .card h3{font-size:1.32rem;margin:0 0 10px}
+  .card p{color:var(--muted);margin:0 0 14px;font-size:.99rem}
+  .card ul{margin:0;padding-left:18px;color:var(--text);font-size:.95rem}
+  .card ul li{margin-bottom:6px}
+
+  /* Pinned parallax bands */
+  .pin{position:relative;background-size:cover;background-position:center;background-attachment:fixed;
+    color:#fff;text-align:center}
+  .pin .veil{background:linear-gradient(180deg,rgba(20,28,33,.5),rgba(20,28,33,.66));padding:96px 22px}
+  .pin h2{color:#fff;font-size:clamp(1.7rem,3.6vw,2.6rem);margin:0 auto 14px;max-width:820px}
+  .pin p{color:#f0e9df;font-size:1.14rem;max-width:680px;margin:0 auto}
+  .pin.sunset{background-image:url("assets/img/IMG_2659.jpg")}
+  .pin.winter{background-image:url("assets/img/IMG_3250.jpg")}
+
+  /* Experiences */
+  .exp{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .exp .x{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow)}
+  .exp .ico{width:52px;height:52px;border-radius:12px;background:var(--stone-2);display:grid;place-items:center;margin-bottom:16px}
+  .exp .ico svg{width:26px;height:26px;stroke:var(--pine);fill:none;stroke-width:1.7}
+  .exp h3{font-size:1.2rem;margin:0 0 8px}
+  .exp p{color:var(--muted);margin:0;font-size:.96rem}
+
+  /* Wine */
+  .wine{position:relative;color:#fff;background-size:cover;background-position:center;background-attachment:fixed;
+    background-image:linear-gradient(180deg,rgba(18,22,25,.82),rgba(18,22,25,.9)),url("assets/img/IMG_1548.jpg")}
+  .wine .section-head h2{color:#fff}
+  .wine .section-head .kick{color:#eec9a9}
+  .wine .section-head p{color:#e6ddd2}
+  .wine-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
+  .wine-cats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .wine-cats span{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);border-radius:999px;
+    padding:8px 16px;font-size:.92rem;font-weight:500}
+  .wine-copy p{color:#e6ddd2;font-size:1.02rem;margin:0 0 14px}
+  .regions{color:#cfc6ba;font-size:.94rem;margin-top:8px}
+  .wine-note{font-size:.84rem;color:#b7ada1;margin-top:20px;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
+
+  /* Area */
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.9rem;font-weight:500;color:var(--slate)}
+
+  /* Gallery */
+  .gallery{columns:4;column-gap:12px}
+  .gallery img{width:100%;border-radius:10px;margin-bottom:12px;break-inside:avoid;box-shadow:var(--shadow)}
+
+  /* Quote / contact */
+  .form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}
+  .form-side h2{font-size:clamp(1.8rem,3.6vw,2.4rem);margin:.4rem 0 .8rem}
+  .form-side p{color:var(--muted)}
+  .contact-list{list-style:none;padding:0;margin:24px 0 0}
+  .contact-list li{display:flex;gap:12px;align-items:flex-start;margin-bottom:15px;font-size:.99rem}
+  .contact-list svg{width:20px;height:20px;stroke:var(--accent-dark);fill:none;stroke-width:1.8;flex-shrink:0;margin-top:3px}
+  form.quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+  .field{margin-bottom:18px}
+  .field.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label{display:block;font-weight:600;font-size:.87rem;margin-bottom:6px;color:var(--slate)}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:1rem;
+    font-family:inherit;background:var(--stone);color:var(--text)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+  textarea{resize:vertical;min-height:120px}
+  .hp{position:absolute;left:-5000px}
+  .form-note{font-size:.82rem;color:var(--muted);margin-top:14px}
+  .success{display:none;background:#eef5f0;border:1px solid #cfe4d8;color:#20503f;padding:16px 18px;border-radius:12px;margin-bottom:18px;font-weight:500}
+
+  /* Footer */
+  footer{background:var(--slate);color:#cdd5db;padding:56px 0 30px}
+  footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;margin-bottom:32px}
+  footer h4{color:#fff;font-family:Georgia,serif;font-size:1.05rem;margin:0 0 12px}
+  footer a{color:#cdd5db}
+  footer a:hover{color:#fff}
+  footer ul{list-style:none;padding:0;margin:0}
+  footer ul li{margin-bottom:8px;font-size:.94rem}
+  .foot-brand{font-family:Georgia,serif;font-size:1.35rem;color:#fff;font-weight:700;line-height:1.2}
+  .foot-brand small{display:block;font-family:-apple-system,sans-serif;font-size:.64rem;font-weight:700;
+    letter-spacing:.18em;color:#9aa6b0;text-transform:uppercase;margin-top:4px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:.82rem;color:#8a95a0;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .partner{font-size:.9rem;color:#aeb8c1;margin-top:6px}
+
+  /* Language visibility: hide ONLY the inactive language; leave the visible one's natural display intact */
+  html[lang="en"] [data-lang-fr]{display:none}
+  html[lang="fr"] [data-lang-en]{display:none}
+
+  @media(max-width:960px){
+    .cards{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr}
+    .exp{grid-template-columns:1fr}
+    .wine-grid{grid-template-columns:1fr}
+    .form-wrap{grid-template-columns:1fr}
+    .gallery{columns:2}
+    footer .cols{grid-template-columns:1fr}
+    nav.main ul{display:none}
+    .menu-toggle{display:block}
+    nav.main ul.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;
+      background:var(--stone);padding:18px 22px;gap:16px;border-bottom:1px solid var(--line)}
+    /* fixed background is janky on mobile — switch to scroll */
+    .pin,.wine{background-attachment:scroll}
+  }
+  @media(max-width:560px){ .gallery{columns:1} .field.row{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Chalet Services & Concierge home">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M3 20h18L13.5 5.5 10.5 11 8.5 8 3 20z"/></svg></span>
+      <span class="bt">Chalet Services &amp; Concierge<small>Morzine · Portes du Soleil</small></span>
+    </a>
+    <div class="nav-right">
+      <nav class="main">
+        <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('navmenu').classList.toggle('open')">☰</button>
+        <ul id="navmenu">
+          <li><a class="navlink" href="#about" data-lang-en>About us</a><a class="navlink" href="#about" data-lang-fr>À propos</a></li>
+          <li><a class="navlink" href="#services" data-lang-en>Services</a><a class="navlink" href="#services" data-lang-fr>Services</a></li>
+          <li><a class="navlink" href="#wine" data-lang-en>Wine &amp; dining</a><a class="navlink" href="#wine" data-lang-fr>Vins &amp; table</a></li>
+          <li><a class="navlink" href="#area" data-lang-en>Area</a><a class="navlink" href="#area" data-lang-fr>Secteur</a></li>
+          <li><a class="navlink" href="#quote" data-lang-en>Enquire</a><a class="navlink" href="#quote" data-lang-fr>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow" data-lang-en>Morzine · Les Gets · Le Biot · Portes du Soleil</span>
+      <span class="eyebrow" data-lang-fr>Morzine · Les Gets · Le Biot · Portes du Soleil</span>
+      <h1 data-lang-en>Your chalet, beautifully looked after.</h1>
+      <h1 data-lang-fr>Votre chalet, choyé toute l'année.</h1>
+      <p class="lead" data-lang-en>A family-run concierge and chalet-management team in the heart of the Portes du Soleil — so your property is cared for and your guests are looked after, season after season.</p>
+      <p class="lead" data-lang-fr>Une équipe familiale de conciergerie et de gestion de chalets au cœur des Portes du Soleil — pour un bien entretenu et des hôtes choyés, saison après saison.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#quote" data-lang-en>Enquire now</a>
+        <a class="btn" href="#quote" data-lang-fr>Nous contacter</a>
+        <a class="btn ghost" href="#services" data-lang-en>Our services</a>
+        <a class="btn ghost" href="#services" data-lang-fr>Nos services</a>
+      </div>
+      <div class="trust">
+        <div><b>10 yrs</b><span data-lang-en>caring for chalets in the valley</span><span data-lang-fr>au service des chalets de la vallée</span></div>
+        <div><b>Family</b><span data-lang-en>run — one trusted contact</span><span data-lang-fr>familiale — un seul interlocuteur</span></div>
+        <div><b>EN/FR</b><span data-lang-en>fluent with owners &amp; guests</span><span data-lang-fr>avec propriétaires &amp; hôtes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / FAMILY BLURB -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <span class="kick" data-lang-en>A family-run business</span><span class="kick" data-lang-fr>Une entreprise familiale</span>
+      <h2 data-lang-en>Bonjour — we're Kate &amp; Eoin</h2>
+      <h2 data-lang-fr>Bonjour — nous sommes Kate &amp; Eoin</h2>
+      <p data-lang-en>We're a family-run business who have been in the area for 10 years. We originally came from Australia, where we worked in law, commerce and construction — carpentry, building and construction project management.</p>
+      <p data-lang-en>We'd be delighted to meet you and see how we can help: concierge, management of building works, supply of wine, and delivery of pre-cooked meals or in-house chefs. We can arrange guided ski touring for your guests, clear snow, maintain your chalet, clean and carry out changeovers.</p>
+      <p data-lang-en>Send a message via the enquiry box below and we can jump on a Teams meeting to discuss your needs and what we can offer.</p>
+      <p class="sign" data-lang-en>Warm regards,<br>Kate &amp; Eoin Jefferies</p>
+
+      <p data-lang-fr>Nous sommes une entreprise familiale installée dans la région depuis 10 ans. Originaires d'Australie, nous y avons exercé dans le droit, le commerce et la construction — charpente, bâtiment et gestion de projets de construction.</p>
+      <p data-lang-fr>Nous serions ravis de vous rencontrer et de voir comment vous aider : conciergerie, gestion de travaux, fourniture de vins, livraison de plats cuisinés ou chefs à domicile. Nous organisons des sorties de ski de randonnée guidées pour vos hôtes, déneigeons, entretenons votre chalet, faisons le ménage et les changements de locataires.</p>
+      <p data-lang-fr>Envoyez-nous un message via le formulaire ci-dessous et nous pourrons organiser une réunion Teams pour discuter de vos besoins et de nos prestations.</p>
+      <p class="sign" data-lang-fr>Bien à vous,<br>Kate &amp; Eoin Jefferies</p>
+    </div>
+    <img src="assets/img/IMG_2141.jpg" alt="Kate and family on a chalet balcony above the valley" />
+  </div>
+</section>
+
+<!-- PINNED BAND 1 -->
+<section class="pin sunset" style="padding:0">
+  <div class="veil">
+    <h2 data-lang-en>One trusted local team for everything your chalet needs.</h2>
+    <h2 data-lang-fr>Une équipe locale de confiance pour tous les besoins de votre chalet.</h2>
+    <p data-lang-en>From the first welcome to the final changeover — and every repair, delivery and detail in between.</p>
+    <p data-lang-fr>Du premier accueil au dernier changement de locataires — et chaque réparation, livraison et détail entre les deux.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kick" data-lang-en>What we do</span><span class="kick" data-lang-fr>Nos prestations</span>
+      <h2 data-lang-en>Complete chalet care &amp; concierge</h2>
+      <h2 data-lang-fr>Gestion &amp; conciergerie de chalet, de A à Z</h2>
+      <p data-lang-en>Whether you let your chalet or keep it for the family, we handle the lot — reliably, and with a builder's eye for detail.</p>
+      <p data-lang-fr>Que vous louiez votre chalet ou le gardiez pour la famille, nous nous occupons de tout — avec fiabilité et le souci du détail d'un professionnel du bâtiment.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="ph" style="background-image:url('assets/img/IMG_3306.jpg')"></div>
+        <div class="cbody">
+          <h3 data-lang-en>Concierge &amp; guest services</h3><h3 data-lang-fr>Conciergerie &amp; services aux hôtes</h3>
+          <p data-lang-en>A warm welcome and a seamless stay for every guest.</p>
+          <p data-lang-fr>Un accueil chaleureux et un séjour sans souci pour chaque hôte.</p>
+          <ul data-lang-en><li>Guest check-in, keys &amp; local support</li><li>Welcome packs, restocking &amp; bookings</li><li>Transfers, ski hire &amp; lift passes arranged</li></ul>
+          <ul data-lang-fr><li>Accueil, remise des clés &amp; assistance locale</li><li>Paniers d'accueil, réassort &amp; réservations</li><li>Transferts, location de ski &amp; forfaits</li></ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph" style="background-image:url('assets/img/IMG_0179.jpg')"></div>
+        <div class="cbody">
+          <h3 data-lang-en>Changeover, cleaning &amp; housekeeping</h3><h3 data-lang-fr>Changements, ménage &amp; entretien</h3>
+          <p data-lang-en>Spotless turnarounds that earn five-star reviews.</p>
+          <p data-lang-fr>Des changements impeccables qui font les avis cinq étoiles.</p>
+          <ul data-lang-en><li>Changeover cleans &amp; fresh linen</li><li>Laundry, restocking &amp; welcome prep</li><li>Property checks &amp; owner reporting</li></ul>
+          <ul data-lang-fr><li>Ménage entre locations &amp; linge frais</li><li>Blanchisserie, réassort &amp; mise en place</li><li>Contrôles du bien &amp; comptes rendus</li></ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph" style="background-image:url('assets/img/Ferme_lawn.jpg')"></div>
+        <div class="cbody">
+          <h3 data-lang-en>Chalet maintenance &amp; snow clearing</h3><h3 data-lang-fr>Entretien du chalet &amp; déneigement</h3>
+          <p data-lang-en>Year-round upkeep so your chalet is always ready.</p>
+          <p data-lang-fr>Un entretien toute l'année pour un chalet toujours prêt.</p>
+          <ul data-lang-en><li>Snow clearing &amp; winter readiness</li><li>Repairs, plumbing, electrical &amp; carpentry</li><li>Seasonal checks, gardens &amp; grounds</li></ul>
+          <ul data-lang-fr><li>Déneigement &amp; mise en hivernage</li><li>Réparations, plomberie, électricité &amp; menuiserie</li><li>Contrôles saisonniers, jardins &amp; extérieurs</li></ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph" style="background-image:url('assets/img/peppiate_deck.jpg')"></div>
+        <div class="cbody">
+          <h3 data-lang-en>Management of building works</h3><h3 data-lang-fr>Gestion de travaux &amp; rénovation</h3>
+          <p data-lang-en>Renovating from afar? We manage it end to end.</p>
+          <p data-lang-fr>Des travaux à distance ? Nous pilotons tout de A à Z.</p>
+          <ul data-lang-en><li>Scoping, budgeting &amp; trusted trade sourcing</li><li>On-site supervision &amp; quality control</li><li>Owner updates in English &amp; French</li></ul>
+          <ul data-lang-fr><li>Cadrage, budget &amp; artisans de confiance</li><li>Supervision de chantier &amp; contrôle qualité</li><li>Comptes rendus en anglais &amp; français</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES / EXTRAS -->
+<section id="extras">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kick" data-lang-en>The extra touches</span><span class="kick" data-lang-fr>Les petits plus</span>
+      <h2 data-lang-en>Make every stay memorable</h2>
+      <h2 data-lang-fr>Rendez chaque séjour mémorable</h2>
+    </div>
+    <div class="exp">
+      <div class="x">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 22h8M12 15v7M7 3h10l-1 7a4 4 0 0 1-8 0L7 3z"/></svg></div>
+        <h3 data-lang-en>Wine supply</h3><h3 data-lang-fr>Fourniture de vins</h3>
+        <p data-lang-en>Hand-picked French wines delivered to the chalet, ready for your guests' arrival.</p>
+        <p data-lang-fr>Vins français sélectionnés, livrés au chalet, prêts pour l'arrivée de vos hôtes.</p>
+      </div>
+      <div class="x">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 3v7a3 3 0 0 0 3 3v8M7 3v6M10 3v6M18 3c-1.5 0-3 2-3 6s1.5 4 3 4v8"/></svg></div>
+        <h3 data-lang-en>Private chefs &amp; meals</h3><h3 data-lang-fr>Chefs à domicile &amp; plats</h3>
+        <p data-lang-en>Pre-cooked meals delivered, or a private chef in your chalet, via our trusted chef partners.</p>
+        <p data-lang-fr>Plats cuisinés livrés, ou un chef à domicile dans votre chalet, via nos chefs partenaires.</p>
+      </div>
+      <div class="x">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 20l7-3 4 2 7-4M5 12l4 2 3-8 3 6 3-1M9 4.5a1.5 1.5 0 1 0 0 .01"/></svg></div>
+        <h3 data-lang-en>Guided ski touring</h3><h3 data-lang-fr>Ski de randonnée guidé</h3>
+        <p data-lang-en>Guided ski touring arranged for your guests — get them into the mountains, safely.</p>
+        <p data-lang-fr>Sorties de ski de randonnée guidées pour vos hôtes — la montagne, en toute sécurité.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WINE & DINING -->
+<section id="wine" class="wine">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kick" data-lang-en>Wine &amp; the table</span><span class="kick" data-lang-fr>Vins &amp; table</span>
+      <h2 data-lang-en>Fill the cellar before they arrive</h2>
+      <h2 data-lang-fr>Garnissez la cave avant leur arrivée</h2>
+      <p data-lang-en>We stock your chalet with hand-picked French wines — and can bring the kitchen to life with private chefs — sourced through our trusted local network in the Vallée d'Aulps.</p>
+      <p data-lang-fr>Nous garnissons votre chalet de vins français sélectionnés — et animons la cuisine avec des chefs à domicile — via notre réseau local de confiance, en Vallée d'Aulps.</p>
+    </div>
+    <div class="wine-grid">
+      <div class="wine-copy">
+        <div class="wine-cats">
+          <span data-lang-en>Red</span><span data-lang-fr>Rouge</span>
+          <span data-lang-en>White</span><span data-lang-fr>Blanc</span>
+          <span data-lang-en>Rosé</span><span data-lang-fr>Rosé</span>
+          <span data-lang-en>Sparkling &amp; Champagne</span><span data-lang-fr>Effervescents &amp; Champagne</span>
+          <span data-lang-en>Beers</span><span data-lang-fr>Bières</span>
+          <span data-lang-en>Canned wines</span><span data-lang-fr>Vins en canette</span>
+          <span data-lang-en>Spirits &amp; Armagnac</span><span data-lang-fr>Spiritueux &amp; Armagnac</span>
+        </div>
+        <p style="margin:0 0 18px"><a href="#quote" style="color:#eec9a9;font-weight:600" data-lang-en>Contact us for the current wine list →</a><a href="#quote" style="color:#eec9a9;font-weight:600" data-lang-fr>Contactez-nous pour la liste des vins actuelle →</a></p>
+        <p data-lang-en>Small-producer, hand-picked wines sourced from across France — Burgundy, the Rhône, Provence, the Languedoc, Bordeaux &amp; Saint-Émilion, Beaujolais and Gascony. Chosen for the way people eat on holiday: barbecue on the terrace, raclette by the fire, a good bottle to open the first night.</p>
+        <p class="regions" data-lang-en>Tell us your taste and budget and we'll build a selection for your stay.</p>
+        <p data-lang-fr>Vins de petits producteurs, sélectionnés dans toute la France — Bourgogne, Rhône, Provence, Languedoc, Bordeaux &amp; Saint-Émilion, Beaujolais et Gascogne. Choisis pour la vie en vacances : barbecue en terrasse, raclette au coin du feu, une belle bouteille pour le premier soir.</p>
+        <p class="regions" data-lang-fr>Dites-nous vos goûts et votre budget, nous composerons une sélection pour votre séjour.</p>
+      </div>
+      <div class="wine-copy">
+        <p data-lang-en><strong style="color:#fff">How it works.</strong> We arrange your wine and in-chalet dining through our trusted local suppliers and chefs, and coordinate delivery and timing around your guests' arrival — one point of contact, no fuss.</p>
+        <p data-lang-fr><strong style="color:#fff">Comment ça marche.</strong> Nous organisons vos vins et votre table via nos fournisseurs et chefs de confiance, et coordonnons livraison et timing selon l'arrivée de vos hôtes — un seul interlocuteur, sans souci.</p>
+        <p class="wine-note" data-lang-en>Wines and chef services are supplied through our partners; a coordination fee applies to orders. Alcohol is sold to over-18s only — please drink responsibly.</p>
+        <p class="wine-note" data-lang-fr>Vins et services de chef fournis via nos partenaires ; des frais de coordination s'appliquent aux commandes. Vente d'alcool réservée aux plus de 18 ans — à consommer avec modération.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PINNED BAND 2 -->
+<section class="pin winter" style="padding:0">
+  <div class="veil">
+    <h2 data-lang-en>Snow on the way? We've already cleared your drive.</h2>
+    <h2 data-lang-fr>La neige arrive ? Votre accès est déjà déneigé.</h2>
+    <p data-lang-en>Wherever in the world you are, your chalet is in good hands.</p>
+    <p data-lang-fr>Où que vous soyez dans le monde, votre chalet est entre de bonnes mains.</p>
+  </div>
+</section>
+
+<!-- AREA -->
+<section id="area" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kick" data-lang-en>Where we work</span><span class="kick" data-lang-fr>Notre secteur</span>
+      <h2 data-lang-en>Across the Portes du Soleil &amp; Vallée d'Aulps</h2>
+      <h2 data-lang-fr>Portes du Soleil &amp; Vallée d'Aulps</h2>
+      <p data-lang-en>Based in Le Biot, we look after chalets in Morzine, Les Gets and the surrounding valleys.</p>
+      <p data-lang-fr>Basés au Biot, nous prenons soin des chalets à Morzine, aux Gets et dans les vallées environnantes.</p>
+    </div>
+    <div class="pills">
+      <span class="pill">Morzine</span><span class="pill">Les Gets</span><span class="pill">Le Biot</span>
+      <span class="pill">Saint-Jean-d'Aulps</span><span class="pill">La Côte d'Arbroz</span><span class="pill">Montriond</span>
+      <span class="pill">Essert-Romand</span><span class="pill">Vallée d'Aulps</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="gallery">
+      <img src="assets/img/IMG_2659.jpg" alt="Alpine sunset over the mountains" loading="lazy" />
+      <img src="assets/img/IMG_0179.jpg" alt="Made-up chalet bedroom" loading="lazy" />
+      <img src="assets/img/IMG_3306.jpg" alt="Vaulted chalet living room" loading="lazy" />
+      <img src="assets/img/Geneva_back_yard_with_ballons_.jpg" alt="Summer garden and pool" loading="lazy" />
+      <img src="assets/img/IMG_4947.jpg" alt="Twin bedroom with wood panelling" loading="lazy" />
+      <img src="assets/img/IMG_3250.jpg" alt="Snow-laden chalet in winter" loading="lazy" />
+      <img src="assets/img/IMG_4954.jpg" alt="Modern chalet bathroom" loading="lazy" />
+      <img src="assets/img/hedges_and_lawn.jpg" alt="Manicured chalet garden" loading="lazy" />
+      <img src="assets/img/IMG_6712.jpg" alt="Warm timber interior" loading="lazy" />
+      <img src="assets/img/IMG_3685.jpg" alt="Festive chalet interior" loading="lazy" />
+      <img src="assets/img/IMG_2066.jpg" alt="Illuminated chalet at night" loading="lazy" />
+      <img src="assets/img/IMG_5742.jpg" alt="Sea of clouds over the Alps" loading="lazy" />
+      <img src="assets/img/IMG_3889.jpg" alt="Snow-covered pines and chalet" loading="lazy" />
+      <img src="assets/img/IMG_6719.jpg" alt="Warm timber sauna interior" loading="lazy" />
+      <img src="assets/img/IMG_7991.jpg" alt="Golden timber sun deck" loading="lazy" />
+      <img src="assets/img/IMG_2059.jpg" alt="Alpine village lights at night" loading="lazy" />
+      <img src="assets/img/shmitt_house.jpg" alt="Timber chalet and deck" loading="lazy" />
+      <img src="assets/img/IMG_9228.jpg" alt="Bespoke chalet joinery" loading="lazy" />
+      <img src="assets/img/IMG_4957.jpg" alt="Twin bedroom made up for guests" loading="lazy" />
+      <img src="assets/img/IMG_0897.jpg" alt="Timber ensuite with walk-in shower" loading="lazy" />
+      <img src="assets/img/IMG_8622.jpg" alt="Hot tub with a valley view" loading="lazy" />
+      <img src="assets/img/IMG_6447.jpg" alt="Snowmobile in deep snow at night" loading="lazy" />
+      <img src="assets/img/IMG_5247b.jpg" alt="Timber chalet cabin build in the snow" loading="lazy" />
+      <img src="assets/img/IMG_9837.jpg" alt="Bespoke green joinery being fitted" loading="lazy" />
+      <img src="assets/img/IMG_1981.jpg" alt="Traditional Savoyard chalet entrance with log store" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE / CONTACT -->
+<section id="quote" class="alt">
+  <div class="wrap form-wrap">
+    <div class="form-side">
+      <span class="kick" data-lang-en>Get in touch</span><span class="kick" data-lang-fr>Contact</span>
+      <h2 data-lang-en>Tell us about your chalet</h2>
+      <h2 data-lang-fr>Parlez-nous de votre chalet</h2>
+      <p data-lang-en>Send a message and we'll come back quickly — happy to jump on a Teams call to talk through what you need.</p>
+      <p data-lang-fr>Envoyez-nous un message, nous répondons rapidement — avec plaisir pour une réunion Teams afin d'échanger sur vos besoins.</p>
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+          <!-- CONFIG: email --><span><a href="mailto:eoin.jfcc@gmail.com">eoin.jfcc@gmail.com</a></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <!-- CONFIG: phone --><span><a href="tel:+33771760369">+33 7 71 76 03 69</a></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Le Biot, Haute-Savoie (74) · Portes du Soleil</span>
+        </li>
+      </ul>
+    </div>
+
+    <form class="quote" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?submitted=true">
+      <div id="ok-en" class="success" data-lang-en>Thanks — your message has been sent. We'll be in touch shortly to arrange a Teams call.</div>
+      <div id="ok-fr" class="success" data-lang-fr>Merci — votre message a bien été envoyé. Nous vous recontactons très vite pour organiser une réunion Teams.</div>
+      <input type="hidden" name="form-name" value="enquiry" />
+      <p class="hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+      <div class="field row">
+        <div><label data-lang-en>Name</label><label data-lang-fr>Nom</label><input type="text" name="name" required /></div>
+        <div><label data-lang-en>Email</label><label data-lang-fr>E-mail</label><input type="email" name="email" required /></div>
+      </div>
+      <div class="field row">
+        <div><label data-lang-en>Phone (optional)</label><label data-lang-fr>Téléphone (facultatif)</label><input type="tel" name="phone" /></div>
+        <div><label data-lang-en>Chalet location</label><label data-lang-fr>Localisation du chalet</label><input type="text" name="location" placeholder="Morzine, Les Gets…" /></div>
+      </div>
+      <div class="field">
+        <label data-lang-en>What can we help with?</label><label data-lang-fr>Comment pouvons-nous aider ?</label>
+        <select name="service" required>
+          <option value="">— Please choose / Choisissez —</option>
+          <option value="Concierge & guest services">Concierge &amp; guest services / Conciergerie</option>
+          <option value="Changeover & housekeeping">Changeover &amp; housekeeping / Changements &amp; ménage</option>
+          <option value="Maintenance & snow clearing">Maintenance &amp; snow / Entretien &amp; déneigement</option>
+          <option value="Building works management">Building works / Gestion de travaux</option>
+          <option value="Wine & dining / chefs">Wine &amp; dining / Vins &amp; table</option>
+          <option value="Ski touring / experiences">Ski touring / Ski de randonnée</option>
+          <option value="Full management / multiple">Full management / Gestion complète</option>
+        </select>
+      </div>
+      <div class="field">
+        <label data-lang-en>Tell us a little more</label><label data-lang-fr>Dites-nous en un peu plus</label>
+        <textarea name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn" style="width:100%" data-lang-en>Send message</button>
+      <button type="submit" class="btn" style="width:100%" data-lang-fr>Envoyer le message</button>
+      <p class="form-note" data-lang-en>By submitting, you agree to be contacted about your enquiry. Your details are never shared.</p>
+      <p class="form-note" data-lang-fr>En envoyant ce formulaire, vous acceptez d'être recontacté au sujet de votre demande. Vos coordonnées ne sont jamais partagées.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="foot-brand">Chalet Services &amp; Concierge<small>Morzine · Portes du Soleil</small></div>
+        <p class="partner" data-lang-en>A family-run <strong style="color:#fff">chalet services &amp; concierge</strong> business in the Portes du Soleil.</p>
+        <p class="partner" data-lang-fr>Une entreprise familiale de <strong style="color:#fff">services &amp; conciergerie de chalet</strong> dans les Portes du Soleil.</p>
+        <p style="margin:.5rem 0 0;max-width:340px;font-size:.9rem" data-lang-en>Family-run care for chalets across Morzine, Les Gets and the Portes du Soleil.</p>
+        <p style="margin:.5rem 0 0;max-width:340px;font-size:.9rem" data-lang-fr>Entretien familial de chalets à Morzine, aux Gets et dans les Portes du Soleil.</p>
+      </div>
+      <div>
+        <h4 data-lang-en>Services</h4><h4 data-lang-fr>Services</h4>
+        <ul>
+          <li><a href="#services" data-lang-en>Concierge &amp; guest services</a><a href="#services" data-lang-fr>Conciergerie</a></li>
+          <li><a href="#services" data-lang-en>Changeover &amp; housekeeping</a><a href="#services" data-lang-fr>Changements &amp; ménage</a></li>
+          <li><a href="#services" data-lang-en>Maintenance &amp; snow clearing</a><a href="#services" data-lang-fr>Entretien &amp; déneigement</a></li>
+          <li><a href="#services" data-lang-en>Building works management</a><a href="#services" data-lang-fr>Gestion de travaux</a></li>
+          <li><a href="#wine" data-lang-en>Wine &amp; dining</a><a href="#wine" data-lang-fr>Vins &amp; table</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-lang-en>Contact</h4><h4 data-lang-fr>Contact</h4>
+        <ul>
+          <!-- CONFIG -->
+          <li><a href="mailto:eoin.jfcc@gmail.com">eoin.jfcc@gmail.com</a></li>
+          <li><a href="tel:+33771760369">+33 7 71 76 03 69</a></li>
+          <li>Le Biot, Haute-Savoie, France</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Chalet Services &amp; Concierge · Portes du Soleil · operated by JEFFBUILD SAS · SIREN 897 699 773</span>
+      <span data-lang-en>Serving the Portes du Soleil</span><span data-lang-fr>Au service des Portes du Soleil</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+    try{ localStorage.setItem('mcs_lang', lang); }catch(e){}
+  }
+  (function(){
+    var saved=null; try{ saved=localStorage.getItem('mcs_lang'); }catch(e){}
+    setLang(saved || ((navigator.language||'en').toLowerCase().startsWith('fr')?'fr':'en'));
+  })();
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){
+    if(new URLSearchParams(location.search).has('submitted')){
+      var lang=document.documentElement.lang||'en';
+      var e=document.getElementById(lang==='fr'?'ok-fr':'ok-en'); if(e) e.style.display='block';
+      var q=document.getElementById('quote'); if(q) q.scrollIntoView();
+    }
+  })();
+  document.querySelectorAll('#navmenu a').forEach(function(a){
+    a.addEventListener('click',function(){document.getElementById('navmenu').classList.remove('open');});
+  });
+</script>
+</body>
+</html>
